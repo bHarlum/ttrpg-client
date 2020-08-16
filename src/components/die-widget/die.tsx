@@ -41,7 +41,7 @@ const StyledInnerContainer = styled.div`
 `
 
 const StyledDie = styled.button`
-    background-color: green;
+    background-color: lightsteelblue;
     height: 2rem;
 `
 
