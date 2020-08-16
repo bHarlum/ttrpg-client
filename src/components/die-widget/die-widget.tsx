@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Die from "../die-widget/die";
 
@@ -8,12 +8,14 @@ const dieFaces = [20, 12, 10, 8, 6, 4];
 
 export default function DieWidget(){
 
+    // const [dieFaces, setDieFaces] = useState<number[]>([]);
 return (
     <StyledContainer>
         <DieSelector>
-            <option value="" hidden> Type of Dice</option>
-            <option>20</option>
-
+            {/* Options are for the die selector */}
+            <option> Type of Dice</option>
+            <option> 20</option>
+            {/* <option onClick={()=> setDieFaces([20]) }> 20</option> */}
 
         </DieSelector>
 
