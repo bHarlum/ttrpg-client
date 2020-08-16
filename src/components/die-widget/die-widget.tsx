@@ -12,7 +12,7 @@ export default function DieWidget(){
 return (<StyledContainer>
         
         <DieStyledButton  onClick={newDieValue} >
-            Roll {dieFaces}
+            Roll: {dieFaces}
         </DieStyledButton>
     <p>{currentValue}</p>
     
