@@ -1,30 +1,53 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Die from "../die-widget/die";
 
-const dieFaces = 20;
-const min = 1;
+const dieFaces = [20, 12, 10, 8, 6, 4];
 
 
 
 export default function DieWidget(){
-    const [currentValue, setCurrentValue] = useState(0);
-    const newDieValue = ()=>setCurrentValue(Math.floor(Math.random() * dieFaces) + min)
-return (<StyledContainer>
-        
-        <DieStyledButton  onClick={newDieValue} >
-            Roll {dieFaces}
-        </DieStyledButton>
-    <p>{currentValue}</p>
-    
-    </StyledContainer>)
+
+    // const [dieFaces, setDieFaces] = useState<number[]>([]);
+return (
+    <StyledContainer>
+        <DieSelector>
+            {/* Options are for the die selector */}
+            <option> Type of Dice</option>
+            <option> 20</option>
+            {/* <option onClick={()=> setDieFaces([20]) }> 20</option> */}
+
+        </DieSelector>
+
+
+        {dieFaces.map((dieType, index)=> {
+            return <Die key={index} max={dieType} />
+        })}
+    </StyledContainer>
+)
     
 }
 
 const StyledContainer = styled.div`
-    background-color: blue;
+    background-color: silver;
+    width: 100%;
 `
-const DieStyledButton = styled.button`
-    background-color: green;
-    width: 3rem;
-    height: fit-content;
+
+const DieSelector = styled.select`
+   width: 35%;
+  /* height: 35px; */
+  background: white;
+  color: gray;
+  padding-left: 5px;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+
+    option {
+        color: black;
+        display: flex;
+        white-space: pre;
+        min-height: 15px;
+        padding: 0px 2px 1px;
+    }
 `
