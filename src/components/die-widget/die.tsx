@@ -6,17 +6,15 @@ const min = 1;
 
 export default function Die({max}: OwnProps){
     const [currentValue, setCurrentValue] = useState([1]);
-    const newDieValue = ()=>setCurrentValue([Math.floor(Math.random() * max) + min, ...currentValue])
-    // console.log('Current value: ', currentValue)
+    const newDieValue = () => setCurrentValue([Math.floor(Math.random() * max) + min, ...currentValue])
+    console.log("rendering", max)
     const [current, ...rest] = currentValue;
     return(
         <DieRowContainer>
-            {/* <buttonDiv>
-            <rollValue>
-            <rollHistory> */}
-            
             <StyledInnerContainer>
-                <StyledDie onClick={()=>newDieValue()} >
+                <StyledDie onClick={() => {
+                    console.log("FIRE");
+                    newDieValue()}} >
                     Roll Die: {max}
                 </StyledDie>
             
@@ -44,8 +42,7 @@ const StyledInnerContainer = styled.div`
 
 const StyledDie = styled.button`
     background-color: green;
-
-    height: fit-content;
+    height: 2rem;
 `
 
 const StyledDiceHistory = styled.div`
