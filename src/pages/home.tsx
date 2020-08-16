@@ -3,6 +3,7 @@ import GridLayout from 'react-grid-layout';
 import styled from "styled-components"
 import { useRecoilValue } from "recoil";
 import { layoutState } from "../atoms";
+import DieWidget from "../components/die-widget/die-widget";
 
 export default function HomePage() {
 
@@ -21,7 +22,7 @@ export default function HomePage() {
         <TestContainer key="a">a</TestContainer>
         <TestContainer key="b">b</TestContainer>
         <TestContainer key="c">c</TestContainer>
-        <MyComponent key="alex-component" >HI IM ALEX</MyComponent>
+        <WidgetContainer key="alex-component" ><DieWidget /></WidgetContainer>
       </GridLayout>
     </StyledGridContainer>
   )
@@ -32,8 +33,8 @@ const TestContainer = styled.div`
 `;
 
 
-const MyComponent = styled.div`
-  background-color: tomato;
+const WidgetContainer = styled.div`
+  background-color: blue;
 `;
 
 const StyledGridContainer = styled.div`
